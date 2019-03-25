@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React  项目开发模板
 
-## Available Scripts
+## 使用
+1.克隆模板
+```bash
+ git clone https://github.com/ktlshy/aimer2-boilerplate.git  [your_project_name]
+```
 
-In the project directory, you can run:
+2.安装
 
-### `npm start`
+```bash
+npm run setup
+```
+这个命令会先删除`.git` 文件以保证目录的干净，然后会安装所有的依赖
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 模板目录说明
+ - `src` 目录为源码所在目录
+ - `assets` 目录为图片、字体等资源所在目录
+ - `libs` 目录为一些插件库所在目录
+ - `utils` 目录为工具函数所在目录
+ - `pages` 目录为页面组件所在目录
+ - `service` 目录为服务所在目录
+ - `styles` 目录为全局样式所在目录
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## 模板配置说明
 
-### `npm test`
+项目的配置在`app.config.js`中
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```javascript
+module.exports = {
+  //项目名
+  appName: 'myapp',
+  // 环境变量
+  // 会预设三个环境变量分表代表 开发环境 生产环境 和测试环境
+  // 可以在代码中通过 APP_ENV 读取当前的环境变量
+  env: {
+    development: {
+      APP_ENV: 'DEV',
+    },
+    production: {
+      APP_ENV: 'PROD',
+    },
+    test: {
+      APP_ENV: 'TEST',
+    },
+  },
+  // 页面配置
+  // 这里的配置分别对应了webpack 中的入口 ,html-webpack-plugin 的模板和页面名
+  pages: [
+    {
+      page: 'index',
+      entry: './src/pages/app.js',
+      template: './src/pages/index.html',
+    },
+  ],
+  // 配置使用的样式语言 支持sass 和 css
+  csslang: 'sass',
+};
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## babel 配置
+默认的babel 配置支持装饰器 和 `async/await`,可以修改`.babelrc.js`文件自定义配置
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ 
