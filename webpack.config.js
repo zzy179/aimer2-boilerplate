@@ -235,9 +235,7 @@ module.exports = () => {
         }),
       // 清除打包文件
       !isDev &&
-        new CleanWebpackPlugin([path.join(__dirname, './build')], {
-          allowExternal: true,
-        }),
+        new CleanWebpackPlugin(),
       // 打包性能
       !isDev && new BundleAnalyzerPlugin(),
     ].filter(Boolean),

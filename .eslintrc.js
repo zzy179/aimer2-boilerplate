@@ -14,6 +14,11 @@ module.exports = {
     node: true,
     es6: true,
   },
+  settings: {
+    'import/resolver': {
+      webpack: './webpack.config.js',
+    },
+  },
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
