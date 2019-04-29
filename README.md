@@ -3,7 +3,7 @@ React  项目开发模板
 ## 使用
 1.克隆模板
 ```bash
- git clone https://github.com/ktlshy/aimer2-boilerplate.git  [your_project_name]
+ git clone https://github.com/zzy179/aimer2-boilerplate.git  [your_project_name]
 ```
 
 2.安装
